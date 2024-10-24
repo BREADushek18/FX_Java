@@ -14,7 +14,7 @@ public class WidgetToggle extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // Создаем виджеты
+
         CheckBox checkBox1 = new CheckBox();
         CheckBox checkBox2 = new CheckBox();
         CheckBox checkBox3 = new CheckBox();
@@ -30,12 +30,10 @@ public class WidgetToggle extends Application {
         Button button = new Button(text3);
         button.setStyle("-fx-font-size: 20px; -fx-background-color: #35334c; -fx-text-fill: #d4bcdc; -fx-border-color: #d3bce4; -fx-border-width: 2px;");
 
-        // Установка стилей для текста
         javafx.scene.control.Label label1 = new javafx.scene.control.Label(text1);
         label1.setTextFill(Color.web("#d4bcdc"));
         label1.setFont(Font.font(14));
 
-        // Обработчики для чекбоксов
         checkBox1.selectedProperty().addListener((observable, oldValue, newValue) -> {
             label1.setVisible(newValue);
         });
@@ -48,13 +46,12 @@ public class WidgetToggle extends Application {
             button.setVisible(newValue);
         });
 
-        // Создаем вертикальный контейнер
         VBox vbox = new VBox(10, checkBox1, label1, checkBox2, textField, checkBox3, button);
         vbox.setStyle("-fx-padding: 20px 20px 20px 20px; -fx-spacing: 10px; -fx-alignment: top-left;");
 
 
         Scene scene = new Scene(vbox, 400, 300);
-        scene.getRoot().setStyle("-fx-background-color: #747090;"); // Основной фон окна
+        scene.getRoot().setStyle("-fx-background-color: #747090;");
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("Виджеты с чекбоксами");
