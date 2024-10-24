@@ -22,7 +22,7 @@ public class RestaurantOrder extends Application {
         }
     }
 
-    private List<Dish> menu = List.of(
+    private final List<Dish> menu = List.of(
             new Dish("Суши: 4 шт.", 300),
             new Dish("Роллы: 8 шт.", 400),
             new Dish("Темпура", 500),
@@ -33,8 +33,8 @@ public class RestaurantOrder extends Application {
             new Dish("Зеленый чай", 70)
     );
 
-    private List<CheckBox> checkBoxes = new ArrayList<>();
-    private List<TextField> quantityFields = new ArrayList<>();
+    private final List<CheckBox> checkBoxes = new ArrayList<>();
+    private final List<TextField> quantityFields = new ArrayList<>();
 
     @Override
     public void start(Stage primaryStage) {
@@ -98,8 +98,7 @@ public class RestaurantOrder extends Application {
             }
         });
 
-        HBox hbox = new HBox(10, checkBox, quantityField, decreaseButton, increaseButton);
-        return hbox;
+        return new HBox(10, checkBox, quantityField, decreaseButton, increaseButton);
     }
 
     private void showReceipt() {

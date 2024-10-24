@@ -34,17 +34,11 @@ public class WidgetToggle extends Application {
         label1.setTextFill(Color.web("#d4bcdc"));
         label1.setFont(Font.font(14));
 
-        checkBox1.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            label1.setVisible(newValue);
-        });
+        checkBox1.selectedProperty().addListener((observable, oldValue, newValue) -> label1.setVisible(newValue));
 
-        checkBox2.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            textField.setVisible(newValue);
-        });
+        checkBox2.selectedProperty().addListener((observable, oldValue, newValue) -> textField.setVisible(newValue));
 
-        checkBox3.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            button.setVisible(newValue);
-        });
+        checkBox3.selectedProperty().addListener((observable, oldValue, newValue) -> button.setVisible(newValue));
 
         VBox vbox = new VBox(10, checkBox1, label1, checkBox2, textField, checkBox3, button);
         vbox.setStyle("-fx-padding: 20px 20px 20px 20px; -fx-spacing: 10px; -fx-alignment: top-left;");
